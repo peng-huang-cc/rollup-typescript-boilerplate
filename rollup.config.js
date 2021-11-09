@@ -40,13 +40,14 @@ export default [
       typescript({
         tsconfig: path.resolve(__dirname, "tsconfig.json"),
       }),
-      resolve({ extensions: [".js", ".ts"] }),
       commonjs(),
       babel({
         babelHelpers: "bundled",
         configFile: path.resolve(__dirname, ".babelrc"),
       }),
-      terser(),
+      resolve({
+        browser: true,
+      }),
     ],
   },
 
